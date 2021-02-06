@@ -3,7 +3,7 @@ module.exports = {
     title: `Gatsby MDX Blog`,
     description: `Awesome Blog built with Gatsby and MDX`,
     titleTemplate: `%s | MDX Blog`,
-    url: `https://gatsby-mdx-blog-course-project.netlify.app/`,
+    url: `https://cw-gatsby-mdx.netlify.app`,
     image: `mainImg.png`,
     twitterUsername: `@compuwiser`
   },
