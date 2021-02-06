@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import About from './About';
-import Instagram from './Instagram';
-import Recent from './Recent';
+
+import About            from './About';
+import Instagram        from './Instagram';
+import Recent           from './Recent';
 import BannerCategories from './BannerCategories';
-const Banner = () => {
-  return (
+
+export default () => (
     <Wrapper>
       <About />
       <Instagram />
@@ -13,7 +14,6 @@ const Banner = () => {
       <BannerCategories />
     </Wrapper>
   );
-};
 
 const Wrapper = styled.aside`
   display: grid;
@@ -27,5 +27,3 @@ const Wrapper = styled.aside`
     }
   }
 `;
-
-export default Banner;

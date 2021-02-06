@@ -19,25 +19,17 @@ const query = graphql`
     }
   }
 `;
-const Instagram = () => {
-  const data = useStaticQuery(query);
 
-  const {
-    allInstaNode: { nodes }
-  } = data;
+export default () => {
+  const instaNodes = useStaticQuery(query).allInstaNode.nodes;
 
   return (
     <Wrapper>
       <Title title='instagram'></Title>
       <div className='images'>
-        {nodes.map((item, index) => {
-          const {
-            localFile: {
-              childImageSharp: { fluid }
-            }
-          } = item;
-          return <Image fluid={fluid} key={index} />;
-        })}
+        {instaNodes.map((node, index) => (
+          <Image fluid={node.localFile.childImageSharp.fluid} key={index} />
+        ))}
       </div>
     </Wrapper>
   );
@@ -50,5 +42,3 @@ const Wrapper = styled.article`
     gap: 1rem;
   }
 `;
-
-export default Instagram;

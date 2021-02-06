@@ -9,6 +9,7 @@ const query = graphql`
   {
     allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 5) {
       nodes {
+        id
         frontmatter {
           slug
           title
@@ -21,32 +22,23 @@ const query = graphql`
             }
           }
         }
-        id
       }
     }
   }
 `;
 
-const Recent = () => {
-  const data = useStaticQuery(query);
-  const {
-    allMdx: { nodes: posts }
-  } = data;
+export default () => {
+  const posts = useStaticQuery(query).allMdx.nodes;
+
   return (
     <Wrapper>
       <Title title='recent' />
-      {posts.map((post) => {
-        const {
-          title,
-          slug,
-          date,
-          image: {
-            childImageSharp: { fluid }
-          }
-        } = post.frontmatter;
+      {posts.map(({ frontmatter, id }) => {
+        const { title, slug, date, image } = frontmatter;
+        const fluidImage = image.childImageSharp.fluid;
         return (
-          <Link to={`/posts/${slug}`} key={post.id} className='post'>
-            <Image fluid={fluid} className='img' />
+          <Link to={`/posts/${slug}`} key={id} className='post'>
+            <Image fluid={fluidImage} className='img' />
             <div>
               <h5>{title}</h5>
               <p>{date}</p>
@@ -86,5 +78,3 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-export default Recent;

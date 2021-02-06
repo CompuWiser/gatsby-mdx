@@ -9,6 +9,7 @@ const components = {
   blockquote: Blockquote,
   pre: PrismSetup
 };
+
 export const wrapRootElement = ({ element }) => {
   return <MDXProvider components={components}>{element}</MDXProvider>;
 };

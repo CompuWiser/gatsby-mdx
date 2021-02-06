@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-const Title = ({ title }) => {
-  return (
-    <Wrapper>
-      <h4>{title}</h4>
-      <div className='line'></div>
-    </Wrapper>
-  );
-};
+
+export default ({ title }) => (
+  <Wrapper>
+    <h4>{title}</h4>
+    <div className='line'></div>
+  </Wrapper>
+);
+
 const Wrapper = styled.div`
   position: relative;
   text-align: center;
@@ -32,4 +32,3 @@ const Wrapper = styled.div`
     z-index: -1;
   }
 `;
-export default Title;

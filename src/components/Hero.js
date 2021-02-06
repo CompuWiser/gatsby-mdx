@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
-// ...GatsbyImageSharpFluid
 
 const query = graphql`
   {
@@ -14,13 +13,11 @@ const query = graphql`
     }
   }
 `;
-const Hero = ({ showPerson }) => {
-  const { person } = useStaticQuery(query);
+export default ({ showPerson }) => {
+  const fluidImage = useStaticQuery(query).person.childImageSharp.fluid;
   return (
     <header className='hero'>
-      {showPerson && <Image fluid={person.childImageSharp.fluid} className='hero-person' />}
+      {showPerson && <Image fluid={fluidImage} className='hero-person' />}
     </header>
   );
 };
-
-export default Hero;

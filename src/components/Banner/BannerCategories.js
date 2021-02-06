@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Categories from '../Categories';
+
 import Title from './Title';
-const BannerCategories = () => {
-  return (
-    <Wrapper>
-      <Title title='categories' />
-      <Categories />
-    </Wrapper>
-  );
-};
+import Categories from '../Categories';
+
+export default () => (
+  <Wrapper>
+    <Title title='categories' />
+    <Categories />
+  </Wrapper>
+);
+
 const Wrapper = styled.div`
   .category {
     font-size: 1rem;
@@ -25,4 +26,3 @@ const Wrapper = styled.div`
     background: var(--clr-grey-10);
   }
 `;
-export default BannerCategories;

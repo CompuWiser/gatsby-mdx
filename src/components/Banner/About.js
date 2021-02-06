@@ -1,9 +1,11 @@
 import React from 'react';
-import SocialLinks from '../../constants/socialLinks';
-import Image from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
-import Title from './Title';
+import Image from 'gatsby-image';
 import styled from 'styled-components';
+
+import Title from './Title';
+import SocialLinks from '../../constants/socialLinks';
+
 const query = graphql`
   {
     file(relativePath: { eq: "banner-about.jpeg" }) {
@@ -15,12 +17,14 @@ const query = graphql`
     }
   }
 `;
-const About = () => {
-  const data = useStaticQuery(query);
+
+export default () => {
+  const fixedImage = useStaticQuery(query).file.childImageSharp.fixed;
+
   return (
     <Wrapper>
       <Title title='about me' />
-      <Image fixed={data.file.childImageSharp.fixed} className='img' />
+      <Image fixed={fixedImage} className='img' />
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, eligendi.</p>
       <SocialLinks styleClass='banner-icons'></SocialLinks>
     </Wrapper>
@@ -36,4 +40,3 @@ const Wrapper = styled.div`
     border-radius: 50%;
   }
 `;
-export default About;
