@@ -10,6 +10,6 @@ const components = {
   pre: PrismSetup
 };
 
-export const wrapRootElement = ({ element }) => {
-  return <MDXProvider components={components}>{element}</MDXProvider>;
-};
+export const wrapRootElement = ({ element }) => (
+  <MDXProvider components={components}>{element}</MDXProvider>
+);

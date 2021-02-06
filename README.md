@@ -48,25 +48,25 @@
 
 ```js
 {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts`,
-      },
-    },
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    name: `posts`,
+    path: `${__dirname}/src/posts`,
+  },
+},
 
 ```
 
-4. Create a Brand New Folder For Post
+3. Create a Brand New Folder For Post
    Won't Query Name - setup is up to you
-5. Add mdx file
-6. DOUBLE CHECK PATHS (../../ - gotcha)
-7. Run 'gatsby clean' - just to be on the safe side
-8. Seperate Images Folder
-9. FrontMatter (space gotcha - title: first post)
-10. Imports after FrontMatter
+4. Add mdx file
+5. DOUBLE CHECK PATHS (../../ - gotcha)
+6. Run 'gatsby clean' - just to be on the safe side
+7. Seperate Images Folder
+8. FrontMatter (space gotcha - title: first post)
+9. Imports after FrontMatter
 
-## Create MDX Pages Programatically
+## Create MDX Pages Programmatically
 
 1. Setup Query with unique value (most likely slug)
 2. Setup Template
@@ -80,16 +80,16 @@
 2. Install - gatsby-transformer-remark
 3. Changes in gatsby config
 
-   remove - 'gatsby-plugin-mdx'
-   add
+  remove - 'gatsby-plugin-mdx'
+  add
 
 ```js
 {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [{ resolve: "gatsby-remark-images" }],
-      },
-    },
+  resolve: `gatsby-plugin-mdx`,
+  options: {
+    gatsbyRemarkPlugins: [{ resolve: "gatsby-remark-images" }],
+  },
+},
 ```
 
 4. Restart the server
@@ -112,6 +112,6 @@
 
 ### MDX
 
-[MDX Reference] : https://mdxjs.com/getting-started
+[MDX Reference] : <https://mdxjs.com/getting-started>
 
-[ Elements Reference] : https://www.gatsbyjs.org/docs/mdx/customizing-components/
+[ Elements Reference] : <https://www.gatsbyjs.org/docs/mdx/customizing-components/>
