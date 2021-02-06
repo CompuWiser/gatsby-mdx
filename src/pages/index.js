@@ -10,7 +10,7 @@ export default (props) => (
   <Layout>
     <SEO title='Home' />
     <Hero showPerson />
-    <Posts posts={props.allMdx.nodes} title='recently published' />
+    <Posts posts={props.data.allMdx.nodes} title='recently published' />
   </Layout>
 );
 

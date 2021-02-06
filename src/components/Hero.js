@@ -13,6 +13,7 @@ const query = graphql`
     }
   }
 `;
+
 export default ({ showPerson }) => {
   const fluidImage = useStaticQuery(query).person.childImageSharp.fluid;
   return (
