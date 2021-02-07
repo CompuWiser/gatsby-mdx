@@ -1,9 +1,8 @@
 const path = require('path');
 
 // create pages dynamically
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const result = await graphql(`
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
+  const { data } = await graphql(`
     {
       allMdx {
         nodes {
@@ -18,7 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  result.data.allMdx.nodes.forEach(({ frontmatter: { slug } }) => {
+  data.allMdx.nodes.forEach(({ frontmatter: { slug } }) => {
     createPage({
       path: `/posts/${slug}`,
       component: path.resolve(`src/templates/post-template.js`),
@@ -27,7 +26,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     });
   });
-  result.data.categories.distinct.forEach((category) => {
+
+  data.categories.distinct.forEach((category) => {
     createPage({
       path: `/${category}`,
       component: path.resolve(`src/templates/category-template.js`),

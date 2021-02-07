@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   padding: 1rem 1.5rem;
   background: var(--clr-grey-10);
   text-align: center;
+  margin: 0 auto;
   #value {
     font-size: 6rem;
     font-weight: bold;

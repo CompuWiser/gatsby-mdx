@@ -10,17 +10,16 @@ const myH2 = ({ children, title }) => {
       </HeadingTwo>
     );
   }
+
   return (
     <h2
-      style={{
-        margin: '2rem 0',
-        color: 'var(--clr-grey-5)'
-      }}
+      style={{ margin: '2rem 0', color: 'var(--clr-grey-5)' }}
     >
       {children}
     </h2>
   );
 };
+
 const HeadingTwo = styled.div`
   margin: 2rem 0;
   .underline {
@@ -29,8 +28,9 @@ const HeadingTwo = styled.div`
     background: var(--clr-primary-5);
   }
 `;
-const myH4 = (props) => {
-  return <h3 style={{ margin: '2rem 0', color: 'var(--clr-primary-5)' }}>{props.children}</h3>;
-};
+
+const myH4 = ({ children }) => (
+  <h3 style={{ margin: '2rem 0', color: 'var(--clr-primary-5)' }}>{children}</h3>
+);
 
 export { myH2, myH4 };

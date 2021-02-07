@@ -14,6 +14,7 @@ const Blockquote = ({ children, display }) => {
         </div>
       </Wrapper>
     );
+
   if (display === 'info')
     return (
       <Wrapper>
@@ -23,12 +24,14 @@ const Blockquote = ({ children, display }) => {
         </div>
       </Wrapper>
     );
+
   if (display === 'default') {
     return (
       <Wrapper>
         <div className='container default'>{children}</div>
       </Wrapper>
     );
+
   } else {
     return (
       <Wrapper>
@@ -40,6 +43,7 @@ const Blockquote = ({ children, display }) => {
     );
   }
 };
+
 const Wrapper = styled.blockquote`
   .container {
     padding: 2rem 1.5rem;

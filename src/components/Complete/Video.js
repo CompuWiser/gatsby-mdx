@@ -1,33 +1,30 @@
 import React from 'react';
 import video from '../../assets/connect.mp4';
 import styled from 'styled-components';
-export const RegVideo = () => {
-  return (
-    <RegVideoWrapper>
-      <video controls autoPlay muted loop>
-        <source src={video} type='video/mp4' />
-      </video>
-    </RegVideoWrapper>
-  );
-};
 
-export const Video = ({ src, title, ...props }) => {
-  return (
-    <IframeVideoWrapper>
-      <div className='video'>
-        <iframe
-          src={src}
-          title={title}
-          allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-          frameBorder='0'
-          webkitallowfullscreen='true'
-          mozallowfullscreen='true'
-          allowFullScreen
-        />
-      </div>
-    </IframeVideoWrapper>
-  );
-};
+export const RegVideo = () => (
+  <RegVideoWrapper>
+    <video controls autoPlay muted loop>
+      <source src={video} type='video/mp4' />
+    </video>
+  </RegVideoWrapper>
+);
+
+export const Video = ({ src, title, ...props }) => (
+  <IframeVideoWrapper>
+    <div className='video'>
+      <iframe
+        src={src}
+        title={title}
+        allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+        frameBorder='0'
+        webkitallowfullscreen='true'
+        mozallowfullscreen='true'
+        allowFullScreen
+      />
+    </div>
+  </IframeVideoWrapper>
+);
 
 const RegVideoWrapper = styled.div`
   width: 90vw;

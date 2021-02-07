@@ -1,41 +1,41 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby MDX Blog`,
-    description: `Awesome Blog built with Gatsby and MDX`,
-    titleTemplate: `%s | MDX Blog`,
-    url: `https://cw-gatsby-mdx.netlify.app`,
-    image: `mainImg.png`,
-    twitterUsername: `@compuwiser`
+    title: 'Gatsby MDX Blog',
+    description: 'Awesome Blog built with Gatsby and MDX',
+    titleTemplate: '%s | MDX Blog',
+    url: 'https://cw-gatsby-mdx.netlify.app',
+    image: 'mainImg.png',
+    twitterUsername: '@compuwiser'
   },
   plugins: [
-    // `gatsby-plugin-mdx`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    // 'gatsby-plugin-mdx',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
 
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `assets`,
+        name: 'assets',
         path: `${__dirname}/src/assets`
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `posts`,
+        name: 'posts',
         path: `${__dirname}/src/posts`
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: 'gatsby-plugin-mdx',
       options: {
         gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }]
       }
     },
     {
-      resolve: `gatsby-plugin-webfonts`,
+      resolve: 'gatsby-plugin-webfonts',
       options: {
         fonts: {
           google: [
@@ -49,9 +49,9 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-instagram`,
+      resolve: 'gatsby-source-instagram',
       options: {
-        username: `gatsbyjs`
+        username: 'compuwiser'
       }
     }
   ]

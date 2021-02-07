@@ -3,14 +3,14 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/vsDark';
 import styled from 'styled-components';
 
-const PrismWrapper = (props) => {
-  const className = props.children.props.className;
+const PrismWrapper = ({children}) => {
+  const className = children.props.className;
   const language = className.replace(/language-/, '');
 
   return (
     <Highlight
       {...defaultProps}
-      code={props.children.props.children.trim()}
+      code={children.props.children.trim()}
       language={language}
       theme={theme}
     >
@@ -33,6 +33,7 @@ const PrismWrapper = (props) => {
     </Highlight>
   );
 };
+
 // Styling Only
 const Pre = styled.pre`
   background: #1e1e1e;

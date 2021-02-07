@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AiOutlineLike } from 'react-icons/ai';
+
 const LikeButton = () => {
   const [value, setValue] = React.useState(0);
   return (
@@ -9,11 +10,7 @@ const LikeButton = () => {
         <button onClick={() => setValue(value + 1)}>
           <AiOutlineLike />
         </button>
-        <p>
-          Liked the post?
-          <br />
-          Click thumbs up few times
-        </p>
+        <p>Liked the post?<br />Click thumbs up few times</p>
       </div>
       <span>+{value}</span>
     </Wrapper>

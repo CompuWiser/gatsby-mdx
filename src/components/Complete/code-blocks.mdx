@@ -2,35 +2,35 @@
 
 ```js
 // comments
-const name = "john"
-const channel = "coding addict"
+const name = 'john';
+const channel = 'coding addict';
 
 function featuredProducts(data) {
-  return data.filter(item => {
-    return item.featured === true
-  })
+  return data.filter((item) => {
+    return item.featured === true;
+  });
 }
-featuredProducts()
+featuredProducts();
 ```
 
 #### JSX
 
 ```jsx
-import React from "react"
+import React from 'react';
 
 const Counter = () => {
-  const [count, setCount] = React.useState(0)
+  const [count, setCount] = React.useState(0);
   return (
-    <section className="counter">
+    <section className='counter'>
       <h4>show some love to MDX</h4>
       <h4>likes {count}</h4>
-      <button className="btn btn-danger" onClick={() => setCount(count + 1)}>
+      <button className='btn btn-danger' onClick={() => setCount(count + 1)}>
         i like mdx
       </button>
     </section>
-  )
-}
-export default Counter
+  );
+};
+export default Counter;
 ```
 
 #### HTML
