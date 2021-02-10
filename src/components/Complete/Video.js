@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const RegVideo = () => (
   <RegVideoWrapper>
-    <video controls autoPlay muted loop>
+    <video autoPlay muted loop>
       <source src={video} type='video/mp4' />
     </video>
   </RegVideoWrapper>
@@ -41,6 +41,7 @@ const RegVideoWrapper = styled.div`
     object-fit: cover;
   }
 `;
+
 const IframeVideoWrapper = styled.div`
   width: 90vw;
   max-width: 700px;

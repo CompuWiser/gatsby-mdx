@@ -1,20 +1,16 @@
 import React from 'react';
 import Title from './Title';
-import Image from 'gatsby-image';
+//import Image from 'gatsby-image';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
+//import { graphql, useStaticQuery } from 'gatsby';
 
 /* const query = graphql`
   {
-    allInstaNode(limit: 6) {
+    allInstaNode(limit: 1) {
       nodes {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        original
+        id
+        caption
       }
     }
   }
@@ -27,8 +23,8 @@ export default () => {
     <Wrapper>
       <Title title='instagram'></Title>
       <div className='images'>
-        {/* {instaNodes.map((node, index) => (
-          <Image fluid={node.localFile.childImageSharp.fluid} key={index} />
+        {/* {instaNodes.map(({ original, caption, id }) => (
+          <img src={original} alt={caption} key={id} width='200' />
         ))} */}
       </div>
     </Wrapper>

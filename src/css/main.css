@@ -44,7 +44,7 @@ Variables
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
-  --fixed-width: 700px;
+  --fixed-width: 1000px;
 }
 
 /*
@@ -625,7 +625,7 @@ Testing Post and Components
 */
 
 .code {
-  background: #1e1e1e;
+  background: #282c34;
   color: var(--clr-primary-5);
   padding: 0 1.5rem;
   border-radius: var(--radius);
@@ -648,6 +648,8 @@ Testing Post and Components
 article>pre.prism-code {
   overflow-x: auto;
   padding: 1.5rem;
+  font-family: monospace !important;
+  font-size: 1.2rem;
 }
 
 .code>article>pre.prism-code .code-tab {
@@ -682,10 +684,16 @@ section.mdx-page>article>pre.prism-code .code-tab {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
   .nice-text {
     margin-left: -2rem;
     margin-right: -2rem;
+  }
+} */
+@media (min-width: 1170px) {
+  section.mdx-page > blockquote > .container {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

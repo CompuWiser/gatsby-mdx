@@ -5,7 +5,7 @@ import { GoQuote } from 'react-icons/go';
 import styled from 'styled-components';
 
 const Blockquote = ({ children, display }) => {
-  if (display === 'warning')
+  if (display === 'warning') {
     return (
       <Wrapper>
         <div className='container warning'>
@@ -14,8 +14,7 @@ const Blockquote = ({ children, display }) => {
         </div>
       </Wrapper>
     );
-
-  if (display === 'info')
+  } else if (display === 'info') {
     return (
       <Wrapper>
         <div className='container info'>
@@ -24,14 +23,12 @@ const Blockquote = ({ children, display }) => {
         </div>
       </Wrapper>
     );
-
-  if (display === 'default') {
+  } else if (display === 'default') {
     return (
       <Wrapper>
         <div className='container default'>{children}</div>
       </Wrapper>
     );
-
   } else {
     return (
       <Wrapper>
@@ -106,4 +103,5 @@ const Wrapper = styled.blockquote`
     }
   }
 `;
+
 export default Blockquote;

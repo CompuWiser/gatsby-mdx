@@ -1,35 +1,29 @@
 import React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/vsDark';
+import theme from 'prism-react-renderer/themes/oceanicNext';
 import styled from 'styled-components';
 
-const PrismWrapper = ({children}) => {
+const PrismWrapper = ({ children }) => {
   const className = children.props.className;
+  const code = children.props.children.trim();
   const language = className.replace(/language-/, '');
 
   return (
-    <Highlight
-      {...defaultProps}
-      code={children.props.children.trim()}
-      language={language}
-      theme={theme}
-    >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => {
-        return (
-          <Container>
-            <Pre className={className} style={style}>
-              <div className='code-tab'>{language}</div>
-              {tokens.map((line, i) => (
-                <div {...getLineProps({ line, key: i })}>
-                  {line.map((token, key) => (
-                    <span {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              ))}
-            </Pre>
-          </Container>
-        );
-      }}
+    <Highlight {...defaultProps} code={code} language={language} theme={theme}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <Container>
+          <Pre className={className} style={style}>
+            <div className='code-tab'>{language}</div>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </Pre>
+        </Container>
+      )}
     </Highlight>
   );
 };
@@ -61,6 +55,7 @@ const Pre = styled.pre`
     background: #1e1e1e;
   }
 `;
+
 const Container = styled.article`
   position: relative;
 `;
